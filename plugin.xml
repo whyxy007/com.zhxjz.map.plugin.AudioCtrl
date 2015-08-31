@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.zhxjz.map.plugin.AudioCtrl"
+      version="1.0.0">
+    <name>AudioCtrl</name>
+    <description>set audio ringer mode</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,AudioCtrl</keywords>
+
+    <js-module src="www/audioCtrl.js" name="audioCtrl">
+        <clobbers target="audioCtrl" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AudioCtrlPlugin" >
+                <param name="android-package" value="com.zhxjz.map.plugin.AudioCtrl"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/AudioCtrl.java" target-dir="src/com/zhxjz/map/plugin" />
+    </platform>
+
+   
+</plugin>
